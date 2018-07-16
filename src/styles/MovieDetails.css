@@ -1,0 +1,155 @@
+.movieDoc-details{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: silver;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
+.movies-poster{
+    width:99%;
+    height: 400px;
+    border: 1px solid white;
+}
+
+.movie-details{
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    width:100%;
+    padding: 18px;
+    background: url('https://wallpaper-house.com/data/out/9/wallpaper2you_322298.jpg');
+    background-size: 1345px;
+}
+
+.movie-name{
+    font-weight: bolder;
+    font-size: 30px;
+    color: rgb(230, 219, 68);
+    margin-bottom: 10px;
+}
+
+.movie-language{
+    border-radius: 8px;
+    border: 1px solid skyblue;
+    padding: 6px;
+    width:60px; 
+    height: auto;
+    font-size: 14px;
+    /* background-color: darkslateblue; */
+    text-align: center;
+    margin-right: 10px;
+    color: skyblue;
+}
+
+.movie-years{
+    font-size: 18px;
+}
+
+
+.movie-type{
+    border-radius: 8px;
+    /* background-color: darkolivegreen; */
+    border: 1px solid silver;
+    width:50px; 
+    font-size: 14px;
+    text-align: center;
+    padding: 6px;
+    margin-right: 10px;
+    color: silver
+}
+
+.movie-genre{
+    border-radius: 8px;
+    /* background-color: darkgoldenrod; */
+    border: 1px solid orange;
+    width: 200px; 
+    font-size: 14px;
+    text-align: center;
+    padding: 6px;
+    color: orange
+}
+
+.release-date{
+    margin-top: 10px;
+    padding: 6px;
+    /* background-color: darkred; */
+    border-radius: 5px;
+    width: 20%;
+    border: 1px solid lightsalmon;
+    font-size: 14px;
+    margin-right: 10px;
+    color: lightsalmon;
+}
+
+.release-time{
+    margin-top: 10px;
+    padding: 6px;
+    /* background-color: purple; */
+    border-radius: 5px;
+    width: 13%;
+    border: 1px solid lightpink;
+    font-size: 14px;
+    color: lightpink;
+}
+
+.movie-plot{
+    border-radius: 5px;
+    padding: 10px;
+    /* background-color: darkcyan; */
+    border: 1px solid rgb(133, 247, 247);
+    color:rgb(133, 247, 247);
+}
+
+.movie-actors{ 
+    padding: 5px;
+    width: 99%;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: burlywood;
+}
+
+.actor-tile{
+    height: 220px;
+    width: 20%;
+    padding: 5px;
+}
+
+.actor-image{
+    height: 170px;
+    width: 20%;
+}
+
+.other-details{
+    /* background-color: lightgrey; */
+    color:silver;
+    font-size: 16px;
+    width:30%;
+}
+
+.director{
+    padding: 10px;
+}
+
+.type{
+    margin-top:5px;
+    flex-direction: row;
+    padding: 6px;
+    margin-left: 0px;
+}
+
+.type-detail{
+   
+    flex-direction: column;
+    padding: 6px;
+    margin-left: 0px;
+    /* background-color: gray; */
+    color: burlywood;
+    border-radius: 5px;
+    border: 1px solid burlywood;
+}
+
+a{
+    color: white;
+}

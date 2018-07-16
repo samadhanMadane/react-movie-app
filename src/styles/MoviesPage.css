@@ -1,0 +1,47 @@
+/* .movies-panel{
+    background: url('https://www.dailythess.gr/wp-content/uploads/2018/05/film-and-tv.jpg');
+    background-repeat: repeat;
+} */
+
+.radio-button{
+    margin: 10px;
+}
+
+/* .movielist-bg{
+
+} */
+
+.search-box{
+    height: 25px;
+    width: 25%;
+    float: right;
+    vertical-align: middle;
+    margin-top: 0px;
+}
+
+.movie-toggle{
+    padding: 10px;
+    background-color: khaki;
+    vertical-align: middle;
+}
+
+input[type=text] {
+    width: 200px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    background-image: url('https://www.w3schools.com/howto/searchicon.png');
+    background-position: 3px 3px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 30px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    float: right;
+}
+
+input[type=text]:focus {
+    width: 25%;
+    height: 25px;
+}

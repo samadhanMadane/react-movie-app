@@ -1,0 +1,31 @@
+.app-header{
+    vertical-align: middle;
+    /* background-color: #222; */
+    height: 60px;
+    padding: 20px;
+    color: white;   
+    margin: 0px;
+    vertical-align: middle;
+}
+
+.app-title{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.nav{
+    padding-left: 60px;
+}
+.nav-tab{
+    color: white;
+    font-size: 18px;
+    padding-left: 60px;
+    text-decoration: none;
+}
+
+.movie-logo{
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin-right: 15px;
+}

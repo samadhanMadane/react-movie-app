@@ -1,0 +1,19 @@
+.moviesDoc-list{
+padding-left: 25px;
+}
+
+.moviesDoc-summary{
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+}
+
+.add-fav{
+    background-color: darkorange;
+    color: white;
+}
+
+.added-fav{
+    background-color: gray;
+    color: white;
+}
