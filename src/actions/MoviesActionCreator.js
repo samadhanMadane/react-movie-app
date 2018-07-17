@@ -17,22 +17,22 @@ export const fetchMovies = () =>{
         }
 }
 
-export const fetchMovieDetailsSuccess = (movies, movieId) =>({
-    type : MoviesActionConstants.MOVIES_DETAILS_SUCCESS,
-    movieId : movieId,
-    payload : movies
-})
+// export const fetchMovieDetailsSuccess = (movies, movieId) =>({
+//     type : MoviesActionConstants.MOVIES_DETAILS_SUCCESS,
+//     movieId : movieId,
+//     payload : movies
+// })
 
-export const fetchMovieDetails = (movieId) =>{
-        return function(dispatch, getState) {
-            return(
-                MoviesAPI.fetchMovies()
-                .then((response)=>{
-                    dispatch(fetchMovieDetailsSuccess(response.data,movieId));
-                })
-            )
-        }
-}
+// export const fetchMovieDetails = (movieId) =>{
+//         return function(dispatch, getState) {
+//             return(
+//                 MoviesAPI.fetchMovies()
+//                 .then((response)=>{
+//                     dispatch(fetchMovieDetailsSuccess(response.data,movieId));
+//                 })
+//             )
+//         }
+// }
 
 // export const fetchMovieDetailsSuccess = (movie) =>({
 //     type : MoviesActionConstants.MOVIES_DETAILS_SUCCESS,
