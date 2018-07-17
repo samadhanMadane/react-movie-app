@@ -11,7 +11,7 @@ color: rgb(0, 153, 255)
 
 .add-fav{
     /* background-color: darkorange; */
-    font-size: 22px;
+    font-size: 18px;
     float: left;
     padding-left: 10px;
    color:red;
@@ -22,7 +22,7 @@ color: rgb(0, 153, 255)
 .added-fav{
     /* background-color: gray; */
     color: gray;
-    font-size: 22px;
+    font-size: 18px;
     float: left;
     padding-left: 10px;
 }
@@ -36,5 +36,13 @@ color: rgb(0, 153, 255)
 
 .movie-rate{
     font-size: 16px;
-    padding: 8px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: green;
+}
+
+.votes{
+    font-size: 18px;
+    margin-left: 5px;
+    color: darkslategray;
 }

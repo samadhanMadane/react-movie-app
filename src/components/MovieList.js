@@ -78,7 +78,7 @@ class MovieList extends Component {
                         movie_year={movie.Year}/>
                         <span className={movie.isFav ? "add-fav" : "added-fav" } 
                                 onClick={() => this.props.moviesActions.addRemoveFavourites(movie.imdbID, true)}>
-                                <i className={movie.isFav ? "fa fa-heart" : "fa fa-heart-o" }/>
+                                <i className={movie.isFav ? "fa fa-heart" : "fa fa-heart-o" }/><span className="votes">{movie.imdbVotes}</span>
                         </span>
                         <span className="add-like"> 
                          {/* onClick={() => this.props.moviesActions.addRemoveFavourites(movie.imdbID, true)}> */}
@@ -105,7 +105,7 @@ class MovieList extends Component {
                             movie_year={movie.Year}/>
                             <span className={movie.isFav ? "add-fav" : "added-fav" } 
                                 onClick={() => this.props.moviesActions.addRemoveFavourites(movie.imdbID, false)}>
-                                <i className={movie.isFav ? "fa fa-heart" : "fa fa-heart-o" }/>
+                                <i className={movie.isFav ? "fa fa-heart" : "fa fa-heart-o" }/><span className="votes">{movie.imdbVotes}</span>
                         </span>
                         <span className="add-like"> 
                          {/* onClick={() => this.props.moviesActions.addRemoveFavourites(movie.imdbID, false)}> */}
