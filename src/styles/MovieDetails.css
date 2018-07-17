@@ -57,7 +57,8 @@
     text-align: center;
     padding: 6px;
     margin-right: 10px;
-    color: silver
+    color: silver;
+    text-transform: capitalize;
 }
 
 .movie-genre{
