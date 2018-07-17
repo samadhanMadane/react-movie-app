@@ -13,6 +13,9 @@ export const MoviesReducer = (state = {}, action) =>{
             let movieDetails = {...state.movies[id]}
             return { ...state, movieDetails : movieDetails }
 
+        case MoviesActionConstatnts.MOVIES_DETAILS_SUCCESS:
+            return { ...state, movieDetails : action.payload }
+
         case MoviesActionConstatnts.ADD_REMOVE_FAVOURITES_SUCCESS:
             const index = state.movies.findIndex( movie => { return movie.imdbID == action.movieId})
             let movies = [...state.movies]

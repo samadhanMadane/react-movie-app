@@ -1,6 +1,6 @@
 .tile-bg{
     text-decoration: none;
-    color: black
+    color: black;
 }
 .moviesDoc-summary{
     float: left;
@@ -8,6 +8,7 @@
     width:18%;
     height:460px;
     text-align: center;
+    background-color: lightgrey;
 }
 
 .img-poster{

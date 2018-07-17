@@ -5,28 +5,27 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 import {connect} from 'react-redux';
 import * as moviesActions from '../actions/MoviesActionCreator';
 import {bindActionCreators} from 'redux';
+import '../../node_modules/font-awesome/css/font-awesome.min.css'
 
 class MovieDetails extends Component {
 
-    componentDidMount(){
+    componentWillMount(){
         // this.props.moviesActions.fetchMovies();
         this.props.moviesActions.fetchMovieDetails(this.props.match.params.movieId);
     }
 
     render() {        
         return (
-            <div className="movieDoc-details" >
+            <div className="movieDoc-details">
             <div className="other-details">
                <img className="movies-poster" src={this.props.movieDetails.Poster}/>
                <div className="director">
-                    Director : {this.props.movieDetails.Director}
+               <span className="movie-headers">Director : </span>{this.props.movieDetails.Director}
                     </div>
-                    <div className="director">   
-                    Writer : {this.props.movieDetails.Writer}</div>
                     <div className="director">
-                    Production : {this.props.movieDetails.Production}</div>
+                    <span className="movie-headers">Production : </span>{this.props.movieDetails.Production}</div>
                     <div className="director">
-                    Response :  {this.props.movieDetails.Response}</div>
+                    <span className="movie-headers">Response : </span>{this.props.movieDetails.Response}</div>
                </div> 
                <div className="movie-details">
                <div className="movie-name">
@@ -49,10 +48,10 @@ class MovieDetails extends Component {
                   </div>
                   <div className="type">
                       <span className="release-date">
-                  Released Date : {this.props.movieDetails.Released}
+                  <i className="fa fa-calendar"/>&nbsp;&nbsp; {this.props.movieDetails.Released}
                   </span>
-                  <span className="release-time"> 
-                  Runtime : {this.props.movieDetails.Runtime}
+                  <span className="release-time">
+                  <i className="fa fa-clock-o"/>&nbsp;&nbsp; {this.props.movieDetails.Runtime}
                   </span>
                   </div>
                 
@@ -61,32 +60,43 @@ class MovieDetails extends Component {
                   {/* Rated :  {this.props.movieDetails.Rated}<br/> */}
                   {/* <h3 className="movie-synopsis">Synopsis:</h3> */}
                   <p className="movie-plot">
-                    {this.props.movieDetails.Plot}
+                  <span className="movie-headers">Synopsis</span>
+                      <p>{this.props.movieDetails.Plot}</p>
                   </p>
                   <div className="type-detail">
                   <div className="movie-actors">
-                  Actors : {this.props.movieDetails.Actors}
+                  <span className="movie-headers">Actors : </span>
+                  {this.props.movieDetails.Actors}
+                  </div>
+                  <div className="movie-actors">   
+                    <span className="movie-headers">Writer : </span>{this.props.movieDetails.Writer}</div>
+                  <div className="movie-actors">
+                  <span className="movie-headers">Rating : </span>
+                  {this.props.movieDetails.imdbRating} / 10
                   </div>
                   <div className="movie-actors">
-                  imdbRating : {this.props.movieDetails.imdbRating}
+                  <span className="movie-headers">Votes : </span>
+                  {this.props.movieDetails.imdbVotes}
                   </div>
                   <div className="movie-actors">
-                  imdbVotes : {this.props.movieDetails.imdbVotes}
+                  <span className="movie-headers">Website : </span>
+                  <a href={this.props.movieDetails.Website} target="_blank">{this.props.movieDetails.Website}</a>
                   </div>
                   <div className="movie-actors">
-                  Website :  <a href={this.props.movieDetails.Website} target="_blank">{this.props.movieDetails.Website}</a>
+                  <span className="movie-headers">Awards : </span>
+                  {this.props.movieDetails.Awards}
                   </div>
                   <div className="movie-actors">
-                  Awards :  {this.props.movieDetails.Awards}
+                  <span className="movie-headers">Box Office : </span>
+                  {this.props.movieDetails.BoxOffice}
                   </div>
                   <div className="movie-actors">
-                  BoxOffice :  {this.props.movieDetails.BoxOffice}
+                  <span className="movie-headers">Country : </span>
+                  {this.props.movieDetails.Country}
                   </div>
                   <div className="movie-actors">
-                  Country : {this.props.movieDetails.Country}
-                  </div>
-                  <div className="movie-actors">
-                  DVD :  {this.props.movieDetails.DVD}
+                  <span className="movie-headers">DVD : </span>
+                  {this.props.movieDetails.DVD}
                   </div>
                   </div>
                 </div>

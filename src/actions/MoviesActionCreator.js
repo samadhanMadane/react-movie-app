@@ -34,6 +34,18 @@ export const fetchMovieDetails = (movieId) =>{
         }
 }
 
+// export const fetchMovieDetailsSuccess = (movie) =>({
+//     type : MoviesActionConstants.MOVIES_DETAILS_SUCCESS,
+//     payload : movie
+// })
+
+// export const fetchMovieDetails = (movie) =>{
+//         return function(dispatch, getState) {
+//                 dispatch(fetchMovieDetailsSuccess(movie));
+//         }
+// }
+
+
 export const addRemoveFavouritesSuceess = (movieId, isFav) =>({
     type : MoviesActionConstants.ADD_REMOVE_FAVOURITES_SUCCESS,
     movieId : movieId,
