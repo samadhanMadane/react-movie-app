@@ -6,12 +6,14 @@ import {connect} from 'react-redux';
 import * as moviesActions from '../actions/MoviesActionCreator';
 import {bindActionCreators} from 'redux';
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
+import _ from 'lodash';
 
 class MovieDetails extends Component {
     constructor(props){
         super(props);
         console.log("constructor",this.props);
-        this.movieDetails = {}
+        this.movieDetails = {},
+        this.movieRatings =[]
 
     }
 
@@ -23,12 +25,38 @@ class MovieDetails extends Component {
         }
     }
 
+    // convertDataToArrayOfObjects(data){
+    //     let list = [];
+        
+    //     _.forEach(data,(value, Id) => {
+    //         list.push({...value, Id})            
+    //     });
+
+    //     return list;
+    // }
+
     render() {
+
+        let ratingList = null;
+
         if (this.props.movies.length != 0){
             const index = this.props.movies.findIndex( mov => { return mov.imdbID == this.props.match.params.movieId})
             this.movieDetails = this.props.movies[index];
+       //     this.movieRatings = this.convertDataToArrayOfObjects(this.movieDetails.Ratings);
+        
+
+        if (this.movieDetails.Ratings.length != 0){
+            ratingList = this.movieDetails.Ratings.map((rating) => {
+               return(
+                <div className="movie-rating">
+                    <span> {rating.Source} : </span><span className="rating-value">{rating.Value} </span>
+                </div>
+            )
+            });
         }
-        console.log("render",this.movieDetails);
+    }
+
+      //  console.log("render",this.movieDetails.Ratings);
         return (
             <div className="movieDoc-details">
                 <div className="other-details">
@@ -69,6 +97,10 @@ class MovieDetails extends Component {
                         <span className="release-time">
                             <i className="fa fa-clock-o"/>&nbsp;&nbsp; {this.movieDetails.Runtime}
                         </span>
+                    </div>
+                    <div className="movie-source-rating">
+                    <span className="movie-headers">Ratings : </span>
+                        <span>{ratingList}</span>
                     </div>
                         {/* Metascore : {this.movieDetails.Metascore}<br/>
                         Ratings : {this.movieDetails.Ratings}<br/>

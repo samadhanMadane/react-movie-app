@@ -162,3 +162,23 @@ a{
     color: white;
     margin-right: 10px;
 }
+
+.movie-source-rating{
+    border-radius: 5px;
+    padding: 10px;
+    /* background-color: darkcyan; */
+    border: 1px solid yellowgreen;
+    color:yellowgreen;
+    margin-top: 10px;    
+}
+
+.movie-rating{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.rating-value{
+    color: khaki;
+    padding-left: 10px;
+}
