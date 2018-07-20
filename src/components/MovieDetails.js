@@ -85,9 +85,6 @@ class MovieDetails extends Component {
                             {this.movieDetails.Genre}
                         </span>
                     </div>
-                    <div>
-                        {/* Year : {this.props.movieDetails.Year}<br/> */}
-                    </div>
                     <div className="type">
                         <span className="release-date">
                             <i className="fa fa-calendar"/>&nbsp;&nbsp; {this.movieDetails.Released}
@@ -100,12 +97,10 @@ class MovieDetails extends Component {
                     <span className="movie-headers">Ratings : </span>
                         <span>{ratingList}</span>
                     </div>
-                    <span className="movie-plot">
+                    <p className="movie-plot">
                         <span className="movie-headers">Synopsis</span>
-                            <p>
-                                {this.movieDetails.Plot}
-                            </p>
-                    </span>
+                            <p>{this.movieDetails.Plot}</p>
+                    </p>
                     <div className="type-detail">
                         <div className="movie-actors">
                             <span className="movie-headers">Actors : </span>
