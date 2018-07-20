@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link, Route } from "react-router-dom";
+// import { Link, Route } from "react-router-dom";
 import '../styles/EventsPage.css';
 
 class EventsPage extends Component {

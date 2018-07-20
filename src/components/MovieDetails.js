@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import '../styles/MovieDetails.css';
-import { BrowserRouter, Link, Route } from "react-router-dom";
 import {connect} from 'react-redux';
 import * as moviesActions from '../actions/MoviesActionCreator';
 import {bindActionCreators} from 'redux';
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
-import _ from 'lodash';
+// import _ from 'lodash';
 
 class MovieDetails extends Component {
     constructor(props){
         super(props);
-        console.log("constructor",this.props);
-        this.movieDetails = {},
-        this.movieRatings =[]
+        // console.log("constructor",this.props);
+        this.movieDetails = {};
+        this.movieRatings = []
 
     }
 
     componentWillMount(){
         // this.props.moviesActions.fetchMovies();
-        console.log("componentWillmount");  
+        // console.log("componentWillmount");  
         if(this.props.movies.length === 0){
             this.props.moviesActions.fetchMovies();
         }
@@ -39,16 +37,16 @@ class MovieDetails extends Component {
 
         let ratingList = null;
 
-        if (this.props.movies.length != 0){
-            const index = this.props.movies.findIndex( mov => { return mov.imdbID == this.props.match.params.movieId})
+        if (this.props.movies.length !== 0){
+            const index = this.props.movies.findIndex( mov => { return mov.imdbID === this.props.match.params.movieId})
             this.movieDetails = this.props.movies[index];
        //     this.movieRatings = this.convertDataToArrayOfObjects(this.movieDetails.Ratings);
         
 
-        if (this.movieDetails.Ratings.length != 0){
-            ratingList = this.movieDetails.Ratings.map((rating) => {
+        if (this.movieDetails.Ratings.length !== 0){
+            ratingList = this.movieDetails.Ratings.map((rating, index) => {
                return(
-                <div className="movie-rating">
+                <div className="movie-rating" key={index}>
                     <span> {rating.Source} : </span><span className="rating-value">{rating.Value} </span>
                 </div>
             )
@@ -60,7 +58,7 @@ class MovieDetails extends Component {
         return (
             <div className="movieDoc-details">
                 <div className="other-details">
-                    <img className="movies-poster" src={this.movieDetails.Poster}/>
+                    <img className="movies-poster" src={this.movieDetails.Poster} alt="Movie Poster"/>
                     <div className="director">
                         <span className="movie-headers">Director : </span>{this.movieDetails.Director}
                     </div>
@@ -102,13 +100,12 @@ class MovieDetails extends Component {
                     <span className="movie-headers">Ratings : </span>
                         <span>{ratingList}</span>
                     </div>
-                        {/* Metascore : {this.movieDetails.Metascore}<br/>
-                        Ratings : {this.movieDetails.Ratings}<br/>
-                        Rated :  {this.movieDetails.Rated}<br/> */}
-                    <p className="movie-plot">
+                    <span className="movie-plot">
                         <span className="movie-headers">Synopsis</span>
-                            <p>{this.movieDetails.Plot}</p>
-                    </p>
+                            <p>
+                                {this.movieDetails.Plot}
+                            </p>
+                    </span>
                     <div className="type-detail">
                         <div className="movie-actors">
                             <span className="movie-headers">Actors : </span>

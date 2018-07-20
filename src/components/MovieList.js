@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import { Link, Route } from "react-router-dom";
+// import { Link, Route } from "react-router-dom";
 import '../styles/MovieList.css';
 import MovieTile from './MovieTile';
-import moviesArray from '../data/MovieData';
-import axios from 'axios';
+// import moviesArray from '../data/MovieData';
+// import axios from 'axios';
 import {connect} from 'react-redux';
 import * as moviesActions from '../actions/MoviesActionCreator';
 import {bindActionCreators} from 'redux';
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
-import MovieDetails from './MovieDetails';
+// import MovieDetails from './MovieDetails';
 
 class MovieList extends Component {
     // constructor(props){
@@ -64,24 +64,21 @@ class MovieList extends Component {
 
     render(){
         let allMovies = null;
-        if (this.props.movies.length != 0){
+        if (this.props.movies.length !== 0){
             allMovies = this.props.movies.map((movie) => {
                 let rating = movie.imdbRating*10;
                 return(
-                    <div className="moviesDoc-summary" key={movie.imdbID} 
-                    // onClick={this.props.moviesActions.fetchMovieDetails(movie)}
-                    >
+                    <div className="moviesDoc-summary" key={movie.imdbID}>
                         <MovieTile 
                         movieId={movie.imdbID} 
                         img_src={movie.Poster}
                         movie_title={movie.Title}
                         movie_year={movie.Year}/>
                         <span className={movie.isFav ? "add-fav" : "added-fav" } 
-                                onClick={() => this.props.moviesActions.addRemoveFavourites(movie.imdbID, true)}>
+                                onClick={movie.isFav ? () => this.props.moviesActions.addRemoveFavourites(movie.imdbID, false) : () => this.props.moviesActions.addRemoveFavourites(movie.imdbID, true) }>
                                 <i className={movie.isFav ? "fa fa-heart" : "fa fa-heart-o" }/><span className="votes">{movie.imdbVotes}</span>
                         </span>
                         <span className="add-like"> 
-                         {/* onClick={() => this.props.moviesActions.addRemoveFavourites(movie.imdbID, true)}> */}
                                 <i className="fa fa-thumbs-o-up"/><span className="movie-rate">{rating}%</span>
                         </span>
                     </div>
@@ -90,30 +87,26 @@ class MovieList extends Component {
         }
 
         let favMovies = null;
-        if(this.props.movies.length != 0){
+        if(this.props.movies.length !== 0){
             favMovies = this.props.movies.map((movie) => {
                 let rating = movie.imdbRating*10;
                 if (movie.isFav){
                     return(
-                        <div className="moviesDoc-summary" key={movie.imdbID}
-                        // onClick={this.props.moviesActions.fetchMovieDetails(movie)}
-                        >
+                        <div className="moviesDoc-summary" key={movie.imdbID}>
                             <MovieTile  
                             movieId={movie.imdbID}
                             img_src={movie.Poster}
                             movie_title={movie.Title}
                             movie_year={movie.Year}/>
-                            <span className={movie.isFav ? "add-fav" : "added-fav" } 
-                                onClick={() => this.props.moviesActions.addRemoveFavourites(movie.imdbID, false)}>
-                                <i className={movie.isFav ? "fa fa-heart" : "fa fa-heart-o" }/><span className="votes">{movie.imdbVotes}</span>
-                        </span>
-                        <span className="add-like"> 
-                         {/* onClick={() => this.props.moviesActions.addRemoveFavourites(movie.imdbID, false)}> */}
+                            <span className="add-fav" onClick={() => this.props.moviesActions.addRemoveFavourites(movie.imdbID, false)}>
+                                <i className="fa fa-heart"/><span className="votes">{movie.imdbVotes}</span>
+                            </span>
+                        <span className="add-like">
                                 <i className="fa fa-thumbs-o-up"/><span className="movie-rate">{rating}%</span>
                         </span>
                         </div>
                     )
-                }
+                }else{ return null}
             });
         }
         
@@ -128,7 +121,6 @@ class MovieList extends Component {
 function mapStateToProps(state){
     return{
         movies: state.moviesReducer.movies || []
-        // movieDetails: state.moviesReducer.movieDetails || []
     }
 }
 
